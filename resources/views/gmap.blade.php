@@ -94,7 +94,7 @@
           console.log(geoJsonstrB);
 
           getoCodeB0 = geoJsonstrB.features[4].center[0];
-          getoCodeB1 = geoJsonstrB.features[0].center[1];
+          getoCodeB1 = geoJsonstrB.features[4].center[1];
 
            console.log(geoJsonstrB.features[4].center[0]);
           console.log(geoJsonstrB.features[4].center[1]);  
