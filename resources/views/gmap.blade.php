@@ -82,22 +82,22 @@
 
           console.log(geoJsonstrA);
 
-          getoCodeA0 = geoJsonstrA.features[4].center[0];
-          getoCodeA1 = geoJsonstrA.features[4].center[1];
+          getoCodeA0 = geoJsonstrA.features[0].center[0];
+          getoCodeA1 = geoJsonstrA.features[0].center[1];
 
 
-          console.log(geoJsonstrA.features[4].center[0]);
-          console.log(geoJsonstrA.features[4].center[1]);   
+          console.log(geoJsonstrA.features[0].center[0]);
+          console.log(geoJsonstrA.features[0].center[1]);   
 
       const geoJsonstrB = await geostrB.json();  
 
           console.log(geoJsonstrB);
 
-          getoCodeB0 = geoJsonstrB.features[4].center[0];
-          getoCodeB1 = geoJsonstrB.features[4].center[1];
+          getoCodeB0 = geoJsonstrB.features[0].center[0];
+          getoCodeB1 = geoJsonstrB.features[0].center[1];
 
-           console.log(geoJsonstrB.features[4].center[0]);
-          console.log(geoJsonstrB.features[4].center[1]);  
+           console.log(geoJsonstrB.features[0].center[0]);
+          console.log(geoJsonstrB.features[0].center[1]);  
 
         getInfo(getoCodeA0,getoCodeA1,getoCodeB0,getoCodeB1);  
 
@@ -148,8 +148,8 @@
     <button type="button" onclick="myFunction()">sumbit</button>
 
     </form>
-    <textarea id="textAreaA"/></textarea>
-    <textarea id="textAreaB"/></textarea>
+    Distance: <textarea id="textAreaA"/></textarea>
+    Duration: <textarea id="textAreaB"/></textarea>
 
      <div id="map"></div>   
 
