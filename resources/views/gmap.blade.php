@@ -99,7 +99,7 @@
            console.log(geoJsonstrB.features[4].center[0]);
           console.log(geoJsonstrB.features[4].center[1]);  
 
-       getInfo(getoCodeA0,getoCodeA1,getoCodeB0,getoCodeB1);  
+        getInfo(getoCodeA0,getoCodeA1,getoCodeB0,getoCodeB1);  
 
       }
 
@@ -108,25 +108,27 @@
       async function getInfo(getoCodeA0,getoCodeA1,getoCodeB0,getoCodeB1) {
 
        const distance = await fetch(
-          "https://api.mapbox.com/directions/v5/mapbox/driving/getoCodeA0,getoCodeA1;getoCodeB0,getoCodeB1?annotations=distance&overview=full&geometries=geojson&access_token=pk.eyJ1IjoibWF5dXN1ZiIsImEiOiJja3oxamlramcweWNhMm5vMTFyd2ljejZhIn0.mKmYvJvETodNbos-jGeluA",
+          `https://api.mapbox.com/directions/v5/mapbox/driving/${getoCodeA0},${getoCodeA1};${getoCodeB0},${getoCodeB1}?annotations=distance&overview=full&geometries=geojson&access_token=pk.eyJ1IjoibWF5dXN1ZiIsImEiOiJja3oxamlramcweWNhMm5vMTFyd2ljejZhIn0.mKmYvJvETodNbos-jGeluA`,
           { method: 'GET' }
         );
 
        const duration = await fetch(
-          "https://api.mapbox.com/directions/v5/mapbox/driving/getoCodeA0,getoCodeA1;getoCodeB0,getoCodeB1?annotations=duration&overview=full&geometries=geojson&access_token=pk.eyJ1IjoibWF5dXN1ZiIsImEiOiJja3oxamlramcweWNhMm5vMTFyd2ljejZhIn0.mKmYvJvETodNbos-jGeluA",
+          `https://api.mapbox.com/directions/v5/mapbox/driving/${getoCodeA0},${getoCodeA1};${getoCodeB0},${getoCodeB1}?annotations=duration&overview=full&geometries=geojson&access_token=pk.eyJ1IjoibWF5dXN1ZiIsImEiOiJja3oxamlramcweWNhMm5vMTFyd2ljejZhIn0.mKmYvJvETodNbos-jGeluA`,
           { method: 'GET' }
         );
 
        const distanceJson = await distance.json();
        console.log(distanceJson);
-       // const data = json.routes[0];
-       // const route = data.geometry.coordinates;
+       const distanceJsonData = distanceJson.routes[0];
+       const distanceData = distanceJsonData.distance;
 
        const durationJson = await duration.json();
        console.log(durationJson);
+       const durationJsonData = durationJson.routes[0];
+       const durationData = durationJsonData.duration;
       
-      document.getElementById("textAreaA").value = distanceJson;
-      document.getElementById("textAreaB").value = durationJson;
+      document.getElementById("textAreaA").value = distanceData;
+      document.getElementById("textAreaB").value = durationData;
 
      }
 
