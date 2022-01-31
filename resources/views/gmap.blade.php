@@ -99,13 +99,13 @@
            console.log(geoJsonstrB.features[4].center[0]);
           console.log(geoJsonstrB.features[4].center[1]);  
 
-       getRoute(getoCodeA0,getoCodeA1,getoCodeB0,getoCodeB1);  
+       getInfo(getoCodeA0,getoCodeA1,getoCodeB0,getoCodeB1);  
 
       }
 
       
 
-      async function getRoute(getoCodeA0,getoCodeA1,getoCodeB0,getoCodeB1) {
+      async function getInfo(getoCodeA0,getoCodeA1,getoCodeB0,getoCodeB1) {
 
        const distance = await fetch(
           "https://api.mapbox.com/directions/v5/mapbox/driving/getoCodeA0,getoCodeA1;getoCodeB0,getoCodeB1?annotations=distance&overview=full&geometries=geojson&access_token=pk.eyJ1IjoibWF5dXN1ZiIsImEiOiJja3oxamlramcweWNhMm5vMTFyd2ljejZhIn0.mKmYvJvETodNbos-jGeluA",
