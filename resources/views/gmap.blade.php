@@ -43,7 +43,7 @@
       });
     }
 
-    function myFunction() {
+    function getAddress() {
 
       let strA = document.getElementById("autocompleteA").value;
       let strB = document.getElementById("autocompleteB").value;
@@ -51,17 +51,17 @@
       console.log(strB);
 
       if(strA==""){
-        alert("Address From is not seltedted")
+        alert("Address From is not selected");
       }
       if(strB==""){
-        alert("Address To is not seltedted")
+        alert("Address To is not selected");
       }
       
       getRoute(strA,strB);
 
       
 
-      return // whatever you want to do with it
+      return;
   }
 
   async function getRoute(strA,strB) {
@@ -145,7 +145,7 @@
     
     From : <input type="text" id="autocompleteA"/>
     To : <input type="text" id="autocompleteB"/>
-    <button type="button" onclick="myFunction()">sumbit</button>
+    <button type="button" onclick="getAddress()">sumbit</button>
 
     </form>
     Distance: <textarea id="textAreaA"/></textarea>
@@ -154,7 +154,7 @@
      <div id="map"></div>   
 
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGKenOfSm3Xwm9gMyvic7nHX31DnLB18o&callback=initMap&libraries=places&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=<API_KEY>&libraries=places&v=weekly"
       async
     ></script>
 
