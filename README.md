@@ -2,8 +2,7 @@ Laravel 8 with Map functionality of Google Map, Mapbox direction and Mapbox geo 
 
 ## installation
 
--> Create database mapshow
+-> Please Set google API Key in gmap view file
 
--> run in command prompt php artisan migrate
+-> run  "php artisan migrate" in command prompt
 
-->
